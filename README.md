@@ -37,4 +37,4 @@
 
 ![Widok główny](./screenshots/screenshot_main_view.png)
 
-![Widok śledzenia](./screenshots/screenshot_tracking_view.png)
+![Widok śledzenia](./screenshots/screenshots_tracking_view.png)
