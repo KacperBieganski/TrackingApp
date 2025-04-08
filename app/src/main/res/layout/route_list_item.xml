@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    android:padding="10dp"
+    android:gravity="center_vertical">
+
+    <!-- Nazwa trasy -->
+    <TextView
+        android:id="@+id/routeName"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:textSize="16sp"
+        android:text="Nazwa trasy" />
+
+    <!-- Data -->
+    <TextView
+        android:id="@+id/routeDate"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="14sp"
+        android:textColor="@android:color/darker_gray"
+        android:text="2024-04-04" />
+
+    <!-- Ikona X do usunięcia -->
+    <TextView
+        android:id="@+id/deleteRoute"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="✖"
+        android:textSize="18sp"
+        android:textColor="@android:color/holo_red_dark"
+        android:padding="5dp"
+        android:clickable="true"
+        android:focusable="true" />
+</LinearLayout>
