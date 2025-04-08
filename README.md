@@ -34,3 +34,5 @@
 ---
 
 ## 📷 Zrzuty ekranu
+
+![Widok główny](./screenshots/screenshot_main_view.png)
