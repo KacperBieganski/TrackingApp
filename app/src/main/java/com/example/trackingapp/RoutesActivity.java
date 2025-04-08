@@ -56,7 +56,7 @@ public class RoutesActivity extends AppCompatActivity {
     }
     private void initializeInfluxDB() {
         String url = AppConstants.BASE_URL;
-        String token = "xxIyf9RkQm6tJOIDxSe4L2jpXEWQyuXPGmVtn-2bfpGGy9LjksMbaVvUQ3J-WzOIXZgwu1CwoMt3AGwq0tKHXA==";
+        String token = "xxx";
         influxDBClient = InfluxDBClientFactory.create(url, token.toCharArray());
     }
     private void fetchRoutes() {
