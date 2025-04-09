@@ -35,4 +35,8 @@
 
 ## 📷 Zrzuty ekranu
 
+### Widok główny
 ![Widok główny](./screenshots/screenshot_main_view.png)
+
+### Widok śledzenia
+![Widok śledzenia](./screenshots/screenshots_tracking_view.png)
