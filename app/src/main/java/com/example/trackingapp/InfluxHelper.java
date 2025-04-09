@@ -11,7 +11,7 @@ import com.example.trackingapp.AppConstants;
 
 public class InfluxHelper {
 
-    private static final String token = "xxx";
+    private static final String token = "xxIyf9RkQm6tJOIDxSe4L2jpXEWQyuXPGmVtn-2bfpGGy9LjksMbaVvUQ3J-WzOIXZgwu1CwoMt3AGwq0tKHXA==";
 
     public static List<GeoPoint> fetchRoutePoints(String routeName) {
         List<GeoPoint> points = new ArrayList<>();

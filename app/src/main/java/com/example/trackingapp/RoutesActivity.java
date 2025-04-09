@@ -56,7 +56,7 @@ public class RoutesActivity extends AppCompatActivity {
     }
     private void initializeInfluxDB() {
         String url = AppConstants.BASE_URL;
-        String token = "xxx";
+        String token = "xxIyf9RkQm6tJOIDxSe4L2jpXEWQyuXPGmVtn-2bfpGGy9LjksMbaVvUQ3J-WzOIXZgwu1CwoMt3AGwq0tKHXA==";
         influxDBClient = InfluxDBClientFactory.create(url, token.toCharArray());
     }
     private void fetchRoutes() {
@@ -80,10 +80,12 @@ public class RoutesActivity extends AppCompatActivity {
                 influxDBClient.getQueryApi().query(query, org).forEach(table -> table.getRecords().forEach(record -> {
                     String name = Objects.requireNonNull(record.getValueByKey("name")).toString();
                     String date = Objects.requireNonNull(record.getTime()).toString().substring(0, 10);
+                    String time = Objects.requireNonNull(record.getTime()).toString().substring(11, 19);
 
                     Map<String, String> map = new HashMap<>();
                     map.put("name", name);
                     map.put("date", date);
+                    map.put("time", time);
                     routesList.add(map);
                 }));
 
@@ -92,7 +94,7 @@ public class RoutesActivity extends AppCompatActivity {
                             RoutesActivity.this,
                             routesList,
                             R.layout.route_list_item,
-                            new String[]{"name", "date"},
+                            new String[]{"name", "date", "time"},
                             new int[]{R.id.routeName, R.id.routeDate}
                     ) {
                         @Override
@@ -102,8 +104,10 @@ public class RoutesActivity extends AppCompatActivity {
 
                             view.setOnClickListener(v -> {
                                 String selectedRoute = routesList.get(position).get("name");
+                                String selectedRouteTime = routesList.get(position).get("time");
                                 Intent intent = new Intent(RoutesActivity.this, MapActivity.class);
                                 intent.putExtra("routeName", selectedRoute);
+                                intent.putExtra("routeDuration", selectedRouteTime);
                                 startActivity(intent);
                             });
 

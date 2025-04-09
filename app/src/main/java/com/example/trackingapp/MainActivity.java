@@ -51,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
     private LocationCallback locationCallback;
     private final List<Location> locationList = new ArrayList<>();
     private InfluxDBClient influxDBClient;
-    private final String token = "xxx";
+    private final String token = "xxIyf9RkQm6tJOIDxSe4L2jpXEWQyuXPGmVtn-2bfpGGy9LjksMbaVvUQ3J-WzOIXZgwu1CwoMt3AGwq0tKHXA==";
     private final String bucket = "TrackingApp";
     private final String org = "UMG";
     private String url = AppConstants.BASE_URL;

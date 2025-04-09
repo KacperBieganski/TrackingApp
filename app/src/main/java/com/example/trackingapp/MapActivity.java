@@ -2,6 +2,8 @@ package com.example.trackingapp;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.widget.TextView;
+
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
@@ -14,6 +16,7 @@ import java.util.List;
 
 public class MapActivity extends AppCompatActivity {
     private MapView mapView;
+    private TextView routeInfoText;
 
 
     @Override
@@ -24,10 +27,17 @@ public class MapActivity extends AppCompatActivity {
 
         mapView = findViewById(R.id.map);
         Toolbar toolbar = findViewById(R.id.toolbar);
+        routeInfoText = findViewById(R.id.route_info_text);
         mapView.setMultiTouchControls(true);
 
         String routeName = getIntent().getStringExtra("routeName");
+        String duration = getIntent().getStringExtra("routeDuration");
         if (routeName != null) {
+            String infoText = "Trasa: " + routeName;
+            if (duration != null) {
+                infoText += " | Czas: " + duration;
+            }
+            routeInfoText.setText(infoText);
             loadRoute(routeName);
         }
 
