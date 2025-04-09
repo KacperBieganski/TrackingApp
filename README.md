@@ -40,3 +40,6 @@
 
 ### Widok śledzenia
 ![Widok śledzenia](./screenshots/screenshots_tracking_view.png)
+
+### Widok mapy zapisanej trasy
+![Widok śledzenia](./screenshots/screenshot_map_view.png)
