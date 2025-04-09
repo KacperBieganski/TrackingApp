@@ -285,7 +285,6 @@ public class MainActivity extends AppCompatActivity {
 
                 synchronized (locationList) {
                     for (Location location : locationList) {
-
                         if (location != null) {
                             Point point = createPoint(name, location);
                             if (point != null) {

@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
 import org.osmdroid.config.Configuration;
+import org.osmdroid.util.BoundingBox;
 import org.osmdroid.views.MapView;
 import org.osmdroid.util.GeoPoint;
 import org.osmdroid.views.overlay.Polyline;
@@ -16,7 +17,6 @@ import java.util.List;
 
 public class MapActivity extends AppCompatActivity {
     private MapView mapView;
-    private TextView routeInfoText;
 
 
     @Override
@@ -27,7 +27,7 @@ public class MapActivity extends AppCompatActivity {
 
         mapView = findViewById(R.id.map);
         Toolbar toolbar = findViewById(R.id.toolbar);
-        routeInfoText = findViewById(R.id.route_info_text);
+        TextView routeInfoText = findViewById(R.id.route_info_text);
         mapView.setMultiTouchControls(true);
 
         String routeName = getIntent().getStringExtra("routeName");
@@ -87,10 +87,8 @@ public class MapActivity extends AppCompatActivity {
 
                         mapView.getOverlays().add(marker);
                     }
-
-                    // Ustaw zoom i środek mapy na pierwszy punkt
-                    mapView.getController().setZoom(17.0);
-                    mapView.getController().setCenter(points.get(0));
+                    BoundingBox boundingBox = BoundingBox.fromGeoPoints(points).increaseByScale(1.1f); // dodaje ok. 10% marginesu
+                    mapView.zoomToBoundingBox(boundingBox, true);
                     mapView.invalidate();
                 }
             });
