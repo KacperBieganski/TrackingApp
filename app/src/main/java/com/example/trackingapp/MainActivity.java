@@ -189,6 +189,9 @@ public class MainActivity extends AppCompatActivity {
         }).start();
     }
     private void startLocationUpdates() {
+        mapView.getOverlays().clear();
+        mapView.invalidate();
+
         LocationRequest locationRequest = new LocationRequest.Builder(5000)  // Set interval in milliseconds
                 .setMinUpdateIntervalMillis(2000)  // Set fastest interval in milliseconds
                 .setPriority(Priority.PRIORITY_HIGH_ACCURACY)  // Set the location priority
